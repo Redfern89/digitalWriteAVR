@@ -3,7 +3,6 @@
  *
  * Created: 19.01.2020 7:29:49
  *  Author: redfern89
- *  Idea: https://github.com/NicksonYap/digitalWriteFast
  */ 
 
 
@@ -78,6 +77,7 @@
 #define B7 7
 #endif
 
+
 // PORTC
 #ifndef C0
 #define C0 8
@@ -103,62 +103,59 @@
 #define C5 13
 #endif
 
+// RESET PIN (non-used, if SPIEN enabled)
 #ifndef C6
 #define C6 14
 #endif
 
-#ifndef C7
-#define C7 15
-#endif
-
 // PORTD
 #ifndef D0
-#define D0 16
+#define D0 15
 #endif
 
 #ifndef D1
-#define D1 17
+#define D1 16
 #endif
 
 #ifndef D2
-#define D2 18
+#define D2 17
 #endif
 
 #ifndef D3
-#define D3 19
+#define D3 18
 #endif
 
 #ifndef D4
-#define D4 20
+#define D4 19
 #endif
 
 #ifndef D5
-#define D5 21
+#define D5 20
 #endif
 
 #ifndef D6
-#define D6 22
+#define D6 21
 #endif
 
 #ifndef D7
-#define D7 23
+#define D7 22
 #endif
 
 #define __digitalPinToPORTReg(P) \
 (((P) >= 0 && (P) <= 7) ? &PORTB : \
-(((P) >= 8 && (P) <= 15) ? &PORTC : &PORTD))
+(((P) >= 8 && (P) <= 14) ? &PORTC : &PORTD))
 
 #define __digitalPinToDDRReg(P) \
 (((P) >= 0 && (P) <= 7) ? &DDRB : \
-(((P) >= 8 && (P) <= 15) ? &DDRC : &DDRD))
+(((P) >= 8 && (P) <= 14) ? &DDRC : &DDRD))
 
 #define __digitalPinToPINReg(P) \
 (((P) >= 0 && (P) <= 7) ? &PINB : \
-(((P) >= 8 && (P) <= 15) ? &PINC : &PIND))
+(((P) >= 8 && (P) <= 14) ? &PINC : &PIND))
 
 #define __digitalPinToBit(P) \
-(((P) >= 0 && (P) <= 7) ? P : \
-(((P) >= 8) && (P) <= 15) ? (P) - 7 : (P) - 16)
+(((P) >= 0 && (P) <= 7) ? (P) : \
+(((P) >= 8) && (P) <= 14) ? ((P) - 8) : ((P) - 15))
 
 #if (defined(__AVR__))
 #ifndef digitalWrite
@@ -173,7 +170,7 @@ bitWrite( *__digitalPinToDDRReg(P), __digitalPinToBit(P), (V));
 
 #ifndef digitalRead
 #define digitalRead(P) \
-bitRead( *__digitalPinToPINReg(P), __digitalPinToBit(P) );
+bitRead( *__digitalPinToPINReg(P), __digitalPinToBit(P) )
 #endif
 #else
 #error Non-AVR device, not supported
