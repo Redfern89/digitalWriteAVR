@@ -23,6 +23,22 @@
 * `PORTB` - B0, B1, B2, B3, B4, B5, B6, B7
 * `PORTD` - D0, D1, D2, D3, D4, D5, D6, D7
 
+## Тесты
+Для тестов была использованная плата Arduino UNO R3 с резонатором на 16MHz. 
+
+`
+pinMode(B5, OUTPUT);
+
+while (1) {
+  digitalWrite(B5, HIGH);
+  digitalWrite(B5, LOW);
+}
+`
+
+Результаты:
+<p align="center"><img src="https://i.ibb.co/qs6TnWs/image.png" /></p>
+
+
 # Совместимость
 * ATmega8
 * ATmega88
