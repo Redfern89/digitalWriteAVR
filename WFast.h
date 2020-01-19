@@ -78,7 +78,6 @@
 #define B7 7
 #endif
 
-
 // PORTC
 #ifndef C0
 #define C0 8
