@@ -4,11 +4,6 @@
 ## Использование
 `#include "WFast.h"`
 
-...
-* `pinMode`(PB4, `OUTPUT`);
-* `digitalWrite`(PB4, `HIGH`);
-
-
 Функции библиотеки
 * `digitalWrite(pinNum, state)` (Запись состояния порта)
 * `pinMode(pinNum, state)` (Определение порта ввод/вывод)
