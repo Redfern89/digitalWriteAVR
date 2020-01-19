@@ -1,7 +1,7 @@
 # digitalWriteAVR
 Библиотека для более удобного использования портов в микроконтроллерах AVR
 
-* Идея взята от сюда https://github.com/NicksonYap/digitalWriteFast
+* Идея взята отсюда https://github.com/NicksonYap/digitalWriteFast
 
 ## Использование
 `#include "WFast.h"`
