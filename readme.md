@@ -26,14 +26,14 @@
 ## Тесты
 Для тестов была использованная плата Arduino UNO R3 с резонатором на 16MHz. 
 
-`
+<blockquote>
 pinMode(B5, OUTPUT);
 
 while (1) {
   digitalWrite(B5, HIGH);
   digitalWrite(B5, LOW);
 }
-`
+</blockquote>
 
 Результаты:
 <p align="center"><img src="https://i.ibb.co/qs6TnWs/image.png" /></p>
