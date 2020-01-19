@@ -5,11 +5,8 @@
 `#include "WFast.h"`
 
 ...
-
-// Установить PORTB, PB4 на выход
-`pinMode(PB4, OUTPUT);`
-// Включить PB4
-`digitalWrite(PB4, HIGH);`
+* `pinMode`(PB4, `OUTPUT`);
+* `digitalWrite`(PB4, `HIGH`);
 
 
 Функции библиотеки
