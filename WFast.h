@@ -3,6 +3,7 @@
  *
  * Created: 19.01.2020 7:29:49
  *  Author: redfern89
+ *  Idea: https://github.com/NicksonYap/digitalWriteFast
  */ 
 
 
