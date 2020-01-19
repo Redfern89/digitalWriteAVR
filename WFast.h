@@ -159,7 +159,7 @@
 
 #define __digitalPinToBit(P) \
 (((P) >= 0 && (P) <= 7) ? P : \
-(((P) >= 8) && (P) <= 15) ? (P) - 7 : (P) - 23)
+(((P) >= 8) && (P) <= 15) ? (P) - 7 : (P) - 16)
 
 #if (defined(__AVR__))
 #ifndef digitalWrite
