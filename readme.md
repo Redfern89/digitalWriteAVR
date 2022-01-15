@@ -22,6 +22,7 @@
 * `PORTC` - C0, C1, C2, C3, C4, C5, C6 (Reset, не используется при включенном SPIEN)
 * `PORTB` - B0, B1, B2, B3, B4, B5, B6, B7
 * `PORTD` - D0, D1, D2, D3, D4, D5, D6, D7
+* `PORTE` - E0, E1, E2, E3  *ATmega328PB*
 
 ## Тесты
 Для тестов была использованная плата Arduino UNO R3 с резонатором на 16MHz и среда разработки Atmel Studio 7.0
