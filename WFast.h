@@ -141,17 +141,36 @@
 #define D7 22
 #endif
 
-#define __digitalPinToPORTReg(P) \
-(((P) >= 0 && (P) <= 7) ? &PORTB : \
-(((P) >= 8 && (P) <= 14) ? &PORTC : &PORTD))
+#ifndef E0
+#define E0 23
+#endif
 
-#define __digitalPinToDDRReg(P) \
+#ifndef E1
+#define E1 24
+#endif
+
+#ifndef E2
+#define E2 25
+#endif
+
+#ifndef E3
+#define E3 26
+#endif
+
+#define  __digitalPinToPORTReg(P) \
+(((P) >= 0 && (P) <= 7) ? &PORTB : \
+((P) >= 8 && (P) <= 14) ? &PORTC : \
+((P) >= 15 && (P) <= 22) ? &PORTD : &PORTE)
+
+#define  __digitalPinToDDRReg(P) \
 (((P) >= 0 && (P) <= 7) ? &DDRB : \
-(((P) >= 8 && (P) <= 14) ? &DDRC : &DDRD))
+((P) >= 8 && (P) <= 14) ? &DDRC : \
+((P) >= 15 && (P) <= 22) ? &DDRD : &DDRE)
 
 #define __digitalPinToPINReg(P) \
 (((P) >= 0 && (P) <= 7) ? &PINB : \
-(((P) >= 8 && (P) <= 14) ? &PINC : &PIND))
+((P) >= 8 && (P) <= 14) ? &PINC : \
+((P) >= 15 && (P) <= 22) ? &PIND : &PINE)
 
 #define __digitalPinToBit(P) \
 (((P) >= 0 && (P) <= 7) ? (P) : \
