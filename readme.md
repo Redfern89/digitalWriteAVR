@@ -49,3 +49,4 @@ int main ( void ) {
 * ATmega48
 * ATmega168
 * ATmega328
+* ATmega328PB
