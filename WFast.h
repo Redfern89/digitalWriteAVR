@@ -141,20 +141,22 @@
 #define D7 22
 #endif
 
-#ifndef E0
-#define E0 23
-#endif
+#if defined(__AVR_ATmega328PB__) 
+	#ifndef E0
+	#define E0 23
+	#endif
 
-#ifndef E1
-#define E1 24
-#endif
+	#ifndef E1
+	#define E1 24
+	#endif
 
-#ifndef E2
-#define E2 25
-#endif
+	#ifndef E2
+	#define E2 25
+	#endif
 
-#ifndef E3
-#define E3 26
+	#ifndef E3
+	#define E3 26
+	#endif
 #endif
 
 #define  __digitalPinToPORTReg(P) \
