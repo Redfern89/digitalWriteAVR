@@ -141,7 +141,6 @@
 #define D7 22
 #endif
 
-// PORTE (ATmega328PB)
 #ifndef E0
 #define E0 23
 #endif
@@ -177,23 +176,23 @@
 (((P) >= 0 && (P) <= 7) ? (P) : \
 (((P) >= 8) && (P) <= 14) ? ((P) - 8) : ((P) - 15))
 
-#if (defined(__AVR__))
-#ifndef digitalWrite
-#define digitalWrite(P, V) \
-bitWrite( *__digitalPinToPORTReg(P), __digitalPinToBit(P), (V) );
-#endif
+#if (defined(__AVR__) && (defined(__AVR_ATmega328__) || defined(__AVR_ATmega328PB__) || defined(__AVR_ATmega328P__) || defined(__AVR_ATmega48__) || defined(__AVR_ATmega48A__) || defined(__AVR_ATmega48__) || defined(__AVR_ATmega8__) || defined(__AVR_ATmega168__) || defined(__AVR_ATmega168A__) || defined(__AVR_ATmega168P__) || defined(__AVR_ATmega88__) || defined(__AVR_ATmega88A__) || defined(__AVR_ATmega88P__))) 
+	#ifndef digitalWrite
+	#define digitalWrite(P, V) \
+	bitWrite( *__digitalPinToPORTReg(P), __digitalPinToBit(P), (V) );
+	#endif
 
-#ifndef pinMode
-#define pinMode(P, V) \
-bitWrite( *__digitalPinToDDRReg(P), __digitalPinToBit(P), (V));
-#endif
+	#ifndef pinMode
+	#define pinMode(P, V) \
+	bitWrite( *__digitalPinToDDRReg(P), __digitalPinToBit(P), (V));
+	#endif
 
-#ifndef digitalRead
-#define digitalRead(P) \
-bitRead( *__digitalPinToPINReg(P), __digitalPinToBit(P) )
-#endif
+	#ifndef digitalRead
+	#define digitalRead(P) \
+	bitRead( *__digitalPinToPINReg(P), __digitalPinToBit(P) )
+	#endif
 #else
-#error Non-AVR device, not supported
+	#error Device Not support
 #endif
 
 #endif /* WFAST_H_ */
