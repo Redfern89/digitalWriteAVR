@@ -141,6 +141,7 @@
 #define D7 22
 #endif
 
+// PORTE (ATmega328PB)
 #ifndef E0
 #define E0 23
 #endif
